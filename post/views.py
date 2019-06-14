@@ -5,4 +5,4 @@ from .models import Post
 
 class PostView(ListView):
     model = Post
-    
+    print(Post.tags)

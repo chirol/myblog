@@ -1,15 +1,35 @@
-<!doctype html>
-<html lang="ja">
+{% load i18n static %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery=True %}
+
+<!DOCTYPE html>{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}title{% endblock %}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% block extra_css %}{% endblock %}
+<title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-こーこは、ベースhtml
 
+<div class="container-fluid header">
+Header
+</div>
+
+  <div class="container">
     {% block content %}
+      {{ content }}
     {% endblock %}
+  </div>
 
-
+<div class="countainer-fluid footer">
+End of Contents
+</div>
+<script src="{% static 'cms/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'cms/js/bootstrap.bundle.min.js' %}"></script>
+{% block extra_js %}{% endblock %}
 </body>
 </html>

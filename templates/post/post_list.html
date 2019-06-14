@@ -1,9 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery=True %}
+
+{% block extra_css %}
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock %}
+
+
 {% block content %}
 post_list
+
+<div class="container post_list">
     {% for post in post_list %}
+    <div class="row list_category_tag">
+            <div class="col-4 list_category">
+            {% for category in post.categories.all %}
+                {{ category }}ああああa
+            {% endfor %}
+            </div>
+            <div class="float-right">
+            {% for tag in post.tags.all %}
+                {{ tag }}
+            {% endfor  %}
+            </div>
+    </div>
+        
         {{ post.title }}<br>
         {{ post.date }}<br>
         {{ post.body }}<br>
+
+
     {% endfor %}
+</div>
 {% endblock %}
