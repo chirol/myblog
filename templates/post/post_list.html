@@ -18,10 +18,10 @@ post_list
     <div class="row list_category_tag">
             <div class="col-4 list_category">
             {% for category in post.categories.all %}
-                {{ category }}ああああa
+                {{ category }}
             {% endfor %}
             </div>
-            <div class="float-right">
+            <div class="col-8 float-right">
             {% for tag in post.tags.all %}
                 {{ tag }}
             {% endfor  %}
