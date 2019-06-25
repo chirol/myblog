@@ -1,9 +1,25 @@
+body {
+    font-size: 10px;
+    color:#353231;
+}
+
+.list-title {
+    font-size: 16px;
+    background-color: #c9c9c9;
+}
 .list_category_tag {
     background-color: #d8d8d8;
+    padding-left: -10px;
+    margin: 0px;
 }
 .list_category {
     background-color: blue;
 }
 .list_tags {
-    background-color: red;
+    background-color: gray;
+}
+.list-date {
+    font-size: 4px;
+    background-color: #b5b49b;
+    
 }

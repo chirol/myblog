@@ -15,22 +15,29 @@ post_list
 
 <div class="container post_list">
     {% for post in post_list %}
-    <div class="row list_category_tag">
-            <div class="col-4 list_category">
-            {% for category in post.categories.all %}
-                {{ category }}
-            {% endfor %}
-            </div>
-            <div class="col-8 float-right">
-            {% for tag in post.tags.all %}
-                {{ tag }}
-            {% endfor  %}
-            </div>
-    </div>
-        
-        {{ post.title }}<br>
-        {{ post.date }}<br>
-        {{ post.body }}<br>
+
+        <div class="row list-title">
+            {{ post.title }}
+        </div>
+
+        <div class="row list_category_tag">
+                <div class="col-4 list_category">
+                {% for category in post.categories.all %}
+                    {{ category }}
+                {% endfor %}
+                </div>
+                <div class="col-8 float-right list_tags">
+                {% for tag in post.tags.all %}
+                    {{ tag }}
+                {% endfor  %}
+                </div>
+        </div>
+
+        {{ post.body | safe }}<br>
+
+        <div class="col-4 list-date">
+            {{ post.date }}
+        </div>
 
 
     {% endfor %}

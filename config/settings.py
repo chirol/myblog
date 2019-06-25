@@ -25,7 +25,10 @@ SECRET_KEY = '=-05tol=7b)-^7-rdgxp0^dlqb&2gx#@*xs!=c6e0abxx(nu9x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chirol.pythonanywhere.com',]
+ALLOWED_HOSTS = [
+                'chirol.pythonanywhere.com',
+                '127.0.0.1',
+                ]
 
 
 # Application definition
@@ -121,13 +124,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-"""
+#デプロイ時はコメントアウト
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-"""
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+# デプロイ時はSTATICFILES_DIRSと反転
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
