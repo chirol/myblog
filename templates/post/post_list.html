@@ -15,31 +15,34 @@ post_list
 
 <div class="container post_list">
     {% for post in post_list %}
+        <div class="card　list_card">
+            <img class="card-img-top" src="" alt="画像予定">
 
-        <div class="row list-title">
-            {{ post.title }}
-        </div>
 
-        <div class="row list_category_tag">
-                <div class="col-4 list_category">
-                {% for category in post.categories.all %}
-                    {{ category }}
-                {% endfor %}
+            <div class="card-body list-card-body">
+
+                <h5 class="card-title">   {{ post.title }}     </h5>
+
+                <div class="row list_category_tag">
+                        <div class="col-4 list_category">
+                        {% for category in post.categories.all %}
+                            {{ category }}
+                        {% endfor %}
+                        </div>
+                        <div class="col-8 float-right list_tags">
+                        {% for tag in post.tags.all %}
+                            {{ tag }}
+                        {% endfor  %}
+                        </div>
                 </div>
-                <div class="col-8 float-right list_tags">
-                {% for tag in post.tags.all %}
-                    {{ tag }}
-                {% endfor  %}
-                </div>
-        </div>
 
-        {{ post.body | safe }}<br>
+                {{ post.body | safe }}<br>
 
-        <div class="col-4 list-date">
-            {{ post.date }}
-        </div>
-
-
+                <div class="col-4 list-date">
+                    {{ post.date }}
+                </div><!-- /.list-date -->
+            </div><!-- /.card-body -->
+        </div><!-- /.card -->
     {% endfor %}
 </div>
 {% endblock %}

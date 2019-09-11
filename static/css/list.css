@@ -5,7 +5,7 @@ body {
 
 .list-title {
     font-size: 16px;
-    background-color: #c9c9c9;
+    background-color: #FCB714;
 }
 .list_category_tag {
     background-color: #d8d8d8;
@@ -13,7 +13,7 @@ body {
     margin: 0px;
 }
 .list_category {
-    background-color: blue;
+    background-color: #FCB714;
 }
 .list_tags {
     background-color: gray;
